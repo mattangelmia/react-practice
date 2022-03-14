@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import List from "./List";
+import { Card } from "react-bootstrap";
+import DateFilter from "./DateFilter";
 
 function App() {
+  const [selected, setSelected] = useState(2020);
+  const [expenses, setExpenses] = useState([
+    {
+      id: "e1",
+      title: "Toilet Paper",
+      amount: 94.12,
+      date: 2019,
+    },
+    { id: "e2", title: "New TV", amount: 799.49, date: 2020 },
+    {
+      id: "e3",
+      title: "Car Insurance",
+      amount: 294.67,
+      date: 2020,
+    },
+    {
+      id: "e4",
+      title: "New Desk (Wooden)",
+      amount: 450,
+      date: 2021,
+    },
+  ]);
+
+  function changeDate(e) {
+    console.log(typeof e.target.value);
+
+    let filteredByDate = expenses.filter(
+      (expense) => expense.date === Number(e.target.value)
+    );
+
+    setExpenses((prevState) => {
+      return filteredByDate;
+    });
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>reactPractice</h1>
+      <DateFilter changeDate={changeDate} />
+      <List selected={selected} expenseList={expenses} />
     </div>
   );
 }
