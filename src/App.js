@@ -7,6 +7,7 @@ import DateFilter from "./DateFilter";
 
 function App() {
   const [selected, setSelected] = useState(2020);
+  const [filterValue, setFilterValue] = useState("");
   const [expenses, setExpenses] = useState([
     {
       id: "e1",
@@ -32,20 +33,22 @@ function App() {
   function changeDate(e) {
     console.log(typeof e.target.value);
 
-    let filteredByDate = expenses.filter(
-      (expense) => expense.date === Number(e.target.value)
-    );
+    setFilterValue(e.target.value);
 
-    setExpenses((prevState) => {
-      return filteredByDate;
-    });
+    // setExpenses((prevState) => {
+    //   return filteredByDate;
+    // });
   }
+
+  let filteredByDate = expenses.filter(
+    (expense) => expense.date === Number(filterValue)
+  );
 
   return (
     <div className="App">
       <h1>reactPractice</h1>
       <DateFilter changeDate={changeDate} />
-      <List selected={selected} expenseList={expenses} />
+      <List selected={selected} expenseList={filteredByDate} />
     </div>
   );
 }
