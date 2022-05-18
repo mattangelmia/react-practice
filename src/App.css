@@ -1,5 +1,93 @@
 .App {
   text-align: center;
+
+  
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/Montserrat/static/Montserrat-SemiBold.ttf")
+}
+
+@font-face {
+  font-family: "Montserrat-thin";
+  src: url("../public/Montserrat/Montserrat-VariableFont_wght.ttf")
+}
+
+
+
+*{
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 100px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  
+}
+
+
+
+
+form{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+p{
+  font-family: "Montserrat-thin";
+}
+
+h5{
+  font-size: 12px !important
+}
+
+input{
+  height: 35px;
+   border: 1px solid rgba(49, 87, 135, 1);
+   border-radius : 5px;
+   width: 10vw;
+}
+
+#form-btn{
+  background: linear-gradient(90deg, #FF7200 0.93%, #FC9500 100%);
+  border-radius: 4px;
+}
+#video-player{
+  background-image: url('./images/IMG_9806.jpg');
+  position: relative;
+
+  width: 497px;
+  height: 305px;
+  background-position: center;
+    background-size: cover;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+#video-player-btn{
+  background-image: url('./images/Oval.png');
+  width: 197px;
+  height: 150px;
+  margin-left: 20%;
+  background-repeat: no-repeat;
+}
+
+#hero-section{
+  background-image: url('./images/back.png');
+  min-height: 100vh;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+  overflow: hidden;
+  position: relative;
+
+  width: 100%;
 }
 
 .App-logo {
@@ -35,4 +123,98 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+li{
+ margin-right: 20px;
+ color: white
+}
+
+
+
+@media screen and (max-width: 767px) {
+  #section-pic{
+    display: none !important;
+  }
+  #hero-div{
+    flex-direction: column;
+    padding: 0% !important;
+  }
+
+  #hero-div-text{
+    width: 95vw !important;
+  }
+
+  #hero-div-text p{
+    display: none
+  }
+
+  #hero-div-text h1{
+    text-align: center;
+  }
+
+  #video-player{
+    display: none;
+  }
+
+  #form-div{
+    padding: 0% !important;
+  }
+
+  form{
+   min-width: 100vw !important;
+    margin-bottom: 20px;
+  }
+
+  input{
+    width: 40vw;
+  }
+
+  #bottom-input{
+    width: 83vw !important;
+  }
+
+  button{
+    width: 83vw !important;
+  }
+
+  #form-p{
+    width: 90vw !important;
+  }
+
+  #reviews-section{
+    flex-direction: column-reverse;
+  }
+
+  #review{
+    width: 90% !important;
+  }
+  
+
+}
+
+
+
+@media screen and (min-width: 767px) {
+  #hero-div-text-mobile{
+    display: none;
+  }
+
+}
+
+
+#video-player-mobile{
+  background-image: url('./images/IMG_9806.jpg');
+  position: relative;
+
+  width:387px;
+  height: 305px;
+  background-position: center;
+    background-size: cover;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(.8);
 }
