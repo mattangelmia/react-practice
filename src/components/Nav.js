@@ -48,7 +48,7 @@ export default function Nav() {
           }}
         >
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>About</li>
           <li>
