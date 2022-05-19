@@ -10,7 +10,10 @@ export default function Product() {
   console.log(productList);
   const dispatch = useDispatch();
   return (
-    <div style={{ display: "flex" }} id="products-section">
+    <div
+      style={{ display: "flex", position: "relative", top: "14vh" }}
+      id="products-section"
+    >
       {productList.map((product, index) => (
         <div
           style={{
@@ -19,6 +22,7 @@ export default function Product() {
             margin: "3%",
             borderRadius: "16px",
             border: "1px solid #8080801c",
+            background: "white",
           }}
           key={index}
           id="product-item"

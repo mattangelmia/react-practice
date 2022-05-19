@@ -14,7 +14,7 @@ export default function Products() {
 
   return (
     <div>
-      <div style={{ margin: "1%" }}>
+      <div style={{ marginLeft: "5%", paddingTop: "1%" }}>
         <h1>Products Page</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa leo nec

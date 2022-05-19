@@ -1,5 +1,6 @@
 import React from "react";
 import machine from "../images/5dfbd03aab1fd7.62443161 copy 7.png";
+import oval from "../images/Oval.png";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function CartProductModal(props) {
@@ -7,6 +8,11 @@ export default function CartProductModal(props) {
     (state) => state.cartProducts.cartProducts
   );
   console.log(cartProductList);
+  let total = cartProductList.reduce(function (acc, item) {
+    return acc + item.price;
+  }, 0);
+
+  console.log(`[CartProductModal] total: ${total}`);
   const dispatch = useDispatch();
 
   return (
@@ -55,15 +61,32 @@ export default function CartProductModal(props) {
                 {product.head},{product.needle}
               </p>
             </div>
-            <div>
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               <h5>{product.price}</h5>
+              <h5>Remove</h5>
             </div>
           </div>
         </div>
       ))}
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <h4>Order Total </h4>
-        <h4>$14,226</h4>
+        <h4>${total}</h4>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            background: "#0076FF",
+            color: "white",
+            width: "10vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "2%",
+          }}
+          id="checkout-btn"
+        >
+          Checkout
+        </div>
       </div>
     </div>
   );
