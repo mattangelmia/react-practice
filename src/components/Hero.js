@@ -5,7 +5,11 @@ import reviewPic from "../images/Group 5910.svg";
 import bannerPic from "../images/Banner Image.png";
 import path from "../images/Path.png";
 
-export default function Hero() {
+export default function Hero(props) {
+  function showModal() {
+    console.log("modal appears");
+  }
+
   return (
     <div>
       <section id="hero-section" style={{}}>
@@ -48,6 +52,7 @@ export default function Hero() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                onClick={props.showModal}
               >
                 <img
                   src={path}
@@ -195,6 +200,7 @@ export default function Hero() {
                     alignItems: "center",
                     transform: "scale(.8)",
                   }}
+                  onClick={showModal}
                 >
                   <img
                     src={path}
