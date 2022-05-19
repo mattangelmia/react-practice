@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import machine from "../images/machine.png";
+import machine1 from "../images/machine.png";
+import machine2 from "../images/machine2.png";
+import machine3 from "../images/machine3.png";
 
 const initialState = {
   products: [
     {
-      img: machine,
+      img: machine1,
       product: "EM-1010",
       type: "Starter Embroidery Machine",
       needle: "10 NEEDLE",
@@ -15,7 +17,7 @@ const initialState = {
       formerPrice: 7500,
     },
     {
-      img: machine,
+      img: machine2,
       product: "TC-1501",
       type: "Commercial Embroidery Machine",
       needle: "15 NEEDLE",
@@ -26,7 +28,7 @@ const initialState = {
       formerPrice: 7500,
     },
     {
-      img: machine,
+      img: machine3,
       product: "MT-1501",
       type: "Commercial Embroidery Machine",
       needle: "10 NEEDLE",

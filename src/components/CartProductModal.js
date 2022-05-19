@@ -39,7 +39,7 @@ export default function CartProductModal(props) {
         </p>
       </div>
       {cartProductList.map((product, index) => (
-        <div>
+        <div key={index}>
           <div style={{ display: "flex" }}>
             <div>
               <img
